@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Unbounded", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-sinhala: "Noto Sans Sinhala", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F6F5FB;
+  color: #15121F;
+}
+
+.font-mixed {
+  font-family: var(--font-body), var(--font-sinhala), sans-serif;
+}
+
+.font-mixed-display {
+  font-family: var(--font-display), var(--font-sinhala), sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.dock-item {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dock-item:hover {
+  transform: translateY(-6px) scale(1.08);
+}
+
+.bg-grid {
+  background-image: radial-gradient(circle, rgba(109, 40, 217, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
