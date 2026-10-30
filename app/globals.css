@@ -6,6 +6,9 @@
   --font-display: "Unbounded", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-sinhala: "Noto Sans Sinhala", sans-serif;
+
+  /* Header height: py-4 (16+16) + logo h-9 (36) = 68px */
+  --header-h: 68px;
 }
 
 html {
@@ -25,7 +28,28 @@ body {
   font-family: var(--font-display), var(--font-sinhala), sans-serif;
 }
 
+@keyframes hero-text-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text-enter {
+  animation: hero-text-enter 700ms cubic-bezier(0.2, 0.75, 0.3, 1) both;
+}
+
+.hero-text-enter-delay {
+  animation-delay: 180ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -39,11 +63,497 @@ body {
 .dock-item {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.dock-item:hover {
-  transform: translateY(-6px) scale(1.08);
+
+@media (hover: hover) and (pointer: fine) {
+  .dock-item:hover {
+    transform: translateY(-6px) scale(1.08);
+  }
 }
 
 .bg-grid {
   background-image: radial-gradient(circle, rgba(109, 40, 217, 0.14) 1px, transparent 1px);
   background-size: 22px 22px;
+}
+
+/* ==============================
+   HERO FULL-SCREEN BANNER SLIDER
+   ============================== */
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  /* Exactly fills the viewport below the sticky header */
+  height: calc(100dvh - var(--header-h));
+  /* Fallback for browsers without dvh support */
+  height: calc(100vh - var(--header-h));
+  min-height: 400px;
+  overflow: hidden;
+  /* Light gradient background from white to light grayish violet */
+  background: linear-gradient(180deg, #ffffff 0%, #f1f0f8 100%);
+}
+
+/* Centered content, pushed higher up */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 18vh 1.5rem 2rem;
+}
+
+@media (max-width: 640px) {
+  .hero-content {
+    padding: 14vh 1.25rem 2rem;
+  }
+}
+
+.hero-title {
+  font-family: var(--font-display), var(--font-sinhala), sans-serif;
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #15121F;
+  text-shadow: none;
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body), var(--font-sinhala), sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #4a4560;
+  text-shadow: none;
+  max-width: 640px;
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+    margin-bottom: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+    max-width: 95%;
+  }
+}
+
+/* Button row */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Glassmorphism primary button */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  border-radius: 9999px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--font-body), var(--font-sinhala), sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-btn {
+    padding: 0.875rem 2.25rem;
+    font-size: 0.95rem;
+    width: auto;
+    min-width: 200px;
+  }
+
+  .hero-buttons {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Solid violet primary with gradient, border and shadow */
+.hero-btn--primary {
+  background: linear-gradient(135deg, #a78bfa 0%, #6d28d9 50%, #4c1d95 100%);
+  background-size: 200% auto;
+  border: 2.5px solid #ffffff;
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.5);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-btn--primary:hover {
+    background-position: right center;
+    box-shadow: 0 15px 40px rgba(109, 40, 217, 0.7);
+    border-color: #ffffff;
+  }
+}
+
+/* Transparent outline secondary */
+.hero-btn--outline {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-btn--outline:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Dot indicators */
+.hero-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  gap: 0.625rem;
+}
+
+@media (min-width: 641px) {
+  .hero-dots {
+    bottom: 2.25rem;
+  }
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+  padding: 0;
+}
+
+.hero-dot--active {
+  background: #ffffff;
+  width: 28px;
+  border-radius: 9999px;
+}
+
+/* Progress bar */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: 30;
+}
+
+.hero-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+  animation: progress-fill linear forwards;
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON (MODERN UI)
+   ========================================================================== */
+
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .whatsapp-float-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.65);
+  }
+}
+
+.whatsapp-float-btn:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.whatsapp-icon {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* Pulse Rings */
+.pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 2px solid #25d366;
+  opacity: 0;
+  animation: pulse-ring-animation 3s cubic-bezier(0.25, 0, 0, 1) infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pulse-ring.ring-2 {
+  animation-delay: 1s;
+}
+
+@keyframes pulse-ring-animation {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Tooltip Hint */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 85px;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: rgba(21, 18, 31, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .whatsapp-float-btn:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Arrow for tooltip */
+.whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(21, 18, 31, 0.85);
+}
+
+/* Responsive Overrides */
+@media (max-width: 640px) {
+  .whatsapp-float-btn {
+    bottom: 2rem;
+    right: 2rem;
+    width: 62px;
+    height: 62px;
+  }
+
+  .whatsapp-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Hide tooltip on mobile to save space */
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HERO SCROLL DOWN INDICATOR
+   ========================================================================== */
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #6d28d9;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  /* Increased hit target area for mobile touch */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-scroll-indicator:hover {
+    color: #4c1d95;
+  }
+}
+
+.scroll-indicator-text {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #4a4560;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+  display: none;
+  /* Hide on desktop */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-scroll-indicator:hover .scroll-indicator-text {
+    color: #15121F;
+  }
+}
+
+.scroll-mouse {
+  position: relative;
+  width: 26px;
+  height: 42px;
+  border: 2px solid #6d28d9;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-scroll-indicator:hover .scroll-mouse {
+    border-color: #4c1d95;
+    transform: translateY(2px);
+  }
+}
+
+.scroll-mouse-wheel {
+  display: block;
+  width: 4px;
+  height: 9px;
+  background-color: #6d28d9;
+  border-radius: 9999px;
+  margin-top: 8px;
+  animation: scroll-wheel-slide 2s ease-in-out infinite;
+  transition: background-color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-scroll-indicator:hover .scroll-mouse-wheel {
+    background-color: #4c1d95;
+  }
+}
+
+.scroll-chevron {
+  width: 44px;
+  height: 44px;
+  animation: scroll-chevron-bounce 2s ease-in-out infinite;
+}
+
+/* Mouse Wheel Animation */
+@keyframes scroll-wheel-slide {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+/* Chevron Bounce Animation */
+@keyframes scroll-chevron-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* Hide or adjust positioning on small mobile screens */
+@media (max-width: 640px) {
+  .hero-scroll-indicator {
+    bottom: 1.5rem;
+    padding: 10px 20px;
+  }
+
+  .scroll-mouse {
+    height: 36px;
+    width: 22px;
+  }
+
+  .scroll-indicator-text {
+    display: block;
+    /* Show only on mobile */
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .scroll-chevron {
+    width: 36px;
+    height: 36px;
+  }
 }

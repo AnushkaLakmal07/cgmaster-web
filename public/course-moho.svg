@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#241044"/>
+      <stop offset="1" stop-color="#8B27C9"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFB2F2"/>
+      <stop offset="1" stop-color="#8E5BFF"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v500H0z"/>
+  <circle cx="655" cy="85" r="170" fill="#DB2777" opacity=".18"/>
+  <circle cx="655" cy="85" r="120" stroke="#F0ABFC" stroke-opacity=".3" stroke-width="2"/>
+  <circle cx="655" cy="85" r="82" stroke="#F0ABFC" stroke-opacity=".25" stroke-width="2"/>
+  <path d="M0 405c145-95 267-96 391 0s254 89 409-12v107H0V405Z" fill="#6023A8" opacity=".72"/>
+  <path d="M82 389c24-63 57-98 95-100 40-2 62 33 62 68 0 34-22 53-49 53H82v-21Z" fill="url(#orb)"/>
+  <circle cx="166" cy="272" r="31" fill="#F8C6FF"/>
+  <path d="M140 302c-10 17-17 35-20 55m55-55c18 15 28 35 31 59m-69-22-31 42m64-41 31 38" stroke="#F8C6FF" stroke-linecap="round" stroke-width="12"/>
+  <path d="m156 267 10-5 11 5-10 5-11-5Z" fill="#411260"/>
+  <text x="310" y="220" fill="#F5D0FE" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="6">2D ANIMATION</text>
+  <text x="300" y="300" fill="#fff" font-family="Arial,sans-serif" font-size="88" font-weight="900" letter-spacing="-4">MOHO</text>
+  <text x="308" y="347" fill="#E9D5FF" font-family="Arial,sans-serif" font-size="25" font-weight="600" letter-spacing="3">BRING CHARACTERS TO LIFE</text>
+  <path d="M300 374h380" stroke="#F0ABFC" stroke-opacity=".6" stroke-width="2"/>
+  <circle cx="695" cy="374" r="5" fill="#F0ABFC"/>
+</svg>
