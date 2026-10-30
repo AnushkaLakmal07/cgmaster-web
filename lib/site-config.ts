@@ -4,13 +4,12 @@
 
 export const SITE = {
   name: "CGmaster.lk",
-  tagline: "Sri Lanka ගොඩනැගිලි නවීන Creative Software පාඨමාලා",
-  logo: "https://cgmaster.lk/wp-content/uploads/2026/01/cgmaster-logo.png",
-  logoWhite:
-    "https://cgmaster.lk/wp-content/uploads/2026/01/cgmaster_lk-white-logo.png",
+  tagline: "Sri Lanka Creative පාඨමාලා",
+  logo: "/cgmaster-logo.png",
+  logoWhite: "/cgmaster-logo.png", // We will use the same logo and apply white filter in the footer if needed, or point it to the local file for fallback.
   // WhatsApp number courses "Join Now" buttons message goes to.
   // Format: country code + number, no + sign, no spaces.
-  whatsappNumber: "94784424308",
+  whatsappNumber: "94766621518",
 };
 
 export function buildWhatsAppLink(courseName: string) {

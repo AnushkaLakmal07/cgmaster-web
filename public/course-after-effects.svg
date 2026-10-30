@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#180C3D"/>
+      <stop offset="1" stop-color="#5131A6"/>
+    </linearGradient>
+    <linearGradient id="rings" x1="398" y1="85" x2="620" y2="375" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F08BFF"/>
+      <stop offset="1" stop-color="#7A65FF"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v500H0z"/>
+  <circle cx="559" cy="244" r="180" stroke="url(#rings)" stroke-opacity=".28" stroke-width="3"/>
+  <circle cx="559" cy="244" r="137" stroke="url(#rings)" stroke-opacity=".42" stroke-width="3"/>
+  <circle cx="559" cy="244" r="93" stroke="url(#rings)" stroke-opacity=".65" stroke-width="3"/>
+  <path d="M0 400h800v100H0z" fill="#10082C" opacity=".68"/>
+  <path d="M0 420h800M0 451h800M0 480h800" stroke="#A89AFF" stroke-opacity=".25"/>
+  <path d="M60 420h240v15H60z" fill="#A855F7"/>
+  <path d="M145 451h295v15H145z" fill="#EC4899"/>
+  <path d="M75 480h380v15H75z" fill="#6366F1"/>
+  <path d="M361 135 507 218l-146 83V135Z" fill="url(#rings)"/>
+  <rect x="80" y="75" width="112" height="112" rx="20" fill="#160D39" stroke="#C4B5FD" stroke-width="5"/>
+  <text x="96" y="157" fill="#C4B5FD" font-family="Arial,sans-serif" font-size="62" font-weight="800">Ae</text>
+  <text x="250" y="180" fill="#DDD6FE" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">MOTION • DESIGN • VFX</text>
+  <text x="248" y="270" fill="#fff" font-family="Arial,sans-serif" font-size="61" font-weight="900" letter-spacing="-2">AFTER EFFECTS</text>
+  <text x="253" y="319" fill="#D8C8FF" font-family="Arial,sans-serif" font-size="23" font-weight="600" letter-spacing="3">MAKE EVERY FRAME MOVE</text>
+</svg>

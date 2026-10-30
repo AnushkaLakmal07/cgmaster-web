@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#062D28"/>
+      <stop offset="1" stop-color="#0B7653"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="340" y1="95" x2="590" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9FBC0"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#background)" d="M0 0h800v500H0z"/>
+  <circle cx="640" cy="105" r="190" fill="#34D399" opacity=".1"/>
+  <circle cx="640" cy="105" r="135" stroke="#A7F3D0" stroke-opacity=".3" stroke-width="2"/>
+  <circle cx="640" cy="105" r="82" stroke="#A7F3D0" stroke-opacity=".22" stroke-width="2"/>
+  <path d="M0 405c145-84 250-72 365 3s258 65 435-25v117H0V405Z" fill="#064E3B" opacity=".8"/>
+  <path d="M80 120h110m-55-55v110m-39-94 78 78m0-78-78 78" stroke="#6EE7B7" stroke-opacity=".48" stroke-width="3" stroke-linecap="round"/>
+  <rect x="352" y="106" width="172" height="172" rx="38" fill="#052E2B" stroke="url(#accent)" stroke-width="5"/>
+  <path d="M395 226 433 157h11l38 69h-19l-8-16h-34l-8 16h-18Zm33-31h20l-10-20-10 20Zm63-38h18v69h-18v-69Z" fill="url(#accent)"/>
+  <circle cx="499" cy="139" r="5" fill="#D9F99D"/>
+  <text x="220" y="340" fill="#D1FAE5" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="7">CREATE • EXPLORE • INNOVATE</text>
+  <text x="267" y="395" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="800" letter-spacing="5">AI FOR CREATIVES</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071D43"/>
+      <stop offset="1" stop-color="#087EBA"/>
+    </linearGradient>
+    <linearGradient id="shape" x1="130" y1="65" x2="430" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#63E6FF"/>
+      <stop offset="1" stop-color="#2867FF"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v500H0z"/>
+  <circle cx="672" cy="87" r="180" fill="#19C8F5" opacity=".12"/>
+  <path d="M0 416 208 220l101 91 129-163 175 211 87-89 100 93v137H0V416Z" fill="#0A3167" opacity=".82"/>
+  <path d="m180 341 121-159 54 69-123 155H180v-65Z" fill="url(#shape)" opacity=".93"/>
+  <path d="m335 406 129-182 105 132-38 50H335Z" fill="#5CE1FF" opacity=".78"/>
+  <rect x="80" y="75" width="112" height="112" rx="20" fill="#071D43" stroke="#58D9FF" stroke-width="5"/>
+  <text x="100" y="157" fill="#5EDCFF" font-family="Arial,sans-serif" font-size="68" font-weight="800">Ps</text>
+  <text x="300" y="180" fill="#BAF2FF" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="6">EDIT • COMPOSE • CREATE</text>
+  <text x="300" y="270" fill="#fff" font-family="Arial,sans-serif" font-size="70" font-weight="900" letter-spacing="-3">PHOTOSHOP</text>
+  <text x="304" y="319" fill="#A5E9FF" font-family="Arial,sans-serif" font-size="24" font-weight="600" letter-spacing="3">MAKE YOUR IDEAS VISIBLE</text>
+  <path d="M300 347h380" stroke="#58D9FF" stroke-opacity=".55" stroke-width="2"/>
+  <circle cx="695" cy="347" r="5" fill="#58D9FF"/>
+</svg>
