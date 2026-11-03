@@ -50,14 +50,14 @@ export default function Hero() {
           />
         </div>
 
-        <div className="mt-4 flex flex-col items-center gap-4">
-          <div className="flex items-center gap-3 rounded-full bg-white/90 px-4 py-2.5 shadow-lg shadow-violet/10">
+        <div className="mt-4 flex w-full flex-col items-center gap-4">
+          <div className="flex max-w-full items-center gap-3 rounded-full bg-white/90 px-3 py-2.5 text-left shadow-lg shadow-violet/10 sm:px-4">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet to-magenta text-white shadow-md shadow-violet/20">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m16 0v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M14 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
               </svg>
             </span>
-            <span className="font-display text-sm font-extrabold text-gray-600 sm:text-base">
+            <span className="min-w-0 font-display text-[clamp(0.75rem,3.8vw,1rem)] font-extrabold leading-tight text-gray-600">
               1,000+ Creative Learners
             </span>
           </div>
@@ -66,7 +66,7 @@ export default function Hero() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex min-w-56 items-center justify-between gap-6 rounded-full bg-gradient-to-r from-violet to-blue-600 px-7 py-3 text-base font-bold text-white shadow-md shadow-violet-500/25 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
+            className="group inline-flex w-[min(100%,14rem)] min-w-0 items-center justify-between gap-3 rounded-full bg-gradient-to-r from-violet to-blue-600 px-[clamp(1rem,5vw,1.75rem)] py-3 text-[clamp(0.875rem,4vw,1rem)] font-bold text-white shadow-md shadow-violet-500/25 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             style={{ fontFamily: "'Outfit', sans-serif" }}
             aria-label="Join us on WhatsApp"
           >
@@ -90,7 +90,7 @@ export default function Hero() {
       </div>
     </section>
 
-    <section className="relative hidden h-[calc(100vh-72px)] overflow-hidden bg-white lg:block">
+    <section className="relative hidden h-[calc(100vh-72px)] supports-[height:100svh]:h-[calc(100svh-72px)] overflow-hidden bg-white lg:block">
       {/* Ambient Glow Effects */}
       <div className="absolute left-1/2 top-1/4 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/12 blur-[140px]" />
       <div className="absolute right-1/4 bottom-1/3 -z-10 h-80 w-80 rounded-full bg-magenta/8 blur-[120px]" />
@@ -103,22 +103,22 @@ export default function Hero() {
             Creativity and Knowledge !
           </span>
         </h1>
-        <div className="absolute left-[3%] top-[52%] z-10 flex w-[40%] flex-col items-start gap-5">
-          <div className="flex items-center gap-3 rounded-full bg-white/75 px-4 py-2.5 shadow-lg shadow-violet/5 backdrop-blur-sm">
+        <div className="absolute left-[3%] top-[52%] z-10 flex w-[40%] max-w-[28rem] flex-col items-start gap-[clamp(0.75rem,2vh,1.25rem)]">
+          <div className="flex max-w-full items-center gap-2.5 rounded-full bg-white/75 px-[clamp(0.625rem,1.4vw,1rem)] py-2 shadow-lg shadow-violet/5 backdrop-blur-sm sm:gap-3 sm:py-2.5">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet to-magenta text-white shadow-md shadow-violet/20">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m16 0v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M14 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
               </svg>
             </span>
-            <p className="text-sm font-semibold leading-snug text-ink">
-              <span className="block font-display text-base font-extrabold text-gray-600">1,000+ Creative Learners</span>
+            <p className="min-w-0 text-sm font-semibold leading-snug text-ink">
+              <span className="block font-display text-[clamp(0.75rem,1.3vw,1rem)] font-extrabold leading-tight text-gray-600">1,000+ Creative Learners</span>
             </p>
           </div>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex min-w-56 items-center justify-between gap-6 rounded-full bg-gradient-to-r from-violet to-blue-600 px-7 py-3 text-base font-bold text-white shadow-md shadow-violet-500/25 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
+            className="group inline-flex w-full max-w-56 min-w-0 items-center justify-between gap-3 rounded-full bg-gradient-to-r from-violet to-blue-600 px-[clamp(1rem,2.2vw,1.75rem)] py-3 text-[clamp(0.875rem,1.3vw,1rem)] font-bold text-white shadow-md shadow-violet-500/25 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             style={{ fontFamily: "'Outfit', sans-serif" }}
             aria-label="Join us on WhatsApp"
           >
@@ -128,13 +128,14 @@ export default function Hero() {
             </svg>
           </a>
         </div>
-        <div className="absolute top-[3%] bottom-0 right-0 w-[86%]">
+        <div className="absolute bottom-[2%] right-0 top-[4%] w-[78%] xl:w-[82%]">
           <Image
             src="/main%20image.png"
             alt="CGmaster students creating digital art with creative software"
             width={1249}
             height={713}
-            className="h-full w-full object-fill"
+            sizes="(min-width: 1280px) 82vw, 78vw"
+            className="h-full w-full object-contain object-right"
             priority
           />
         </div>

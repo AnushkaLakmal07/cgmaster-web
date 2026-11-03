@@ -12,10 +12,10 @@ export default function CourseSocialProof({
 
   return (
     <div
-      className={`flex flex-wrap items-center gap-x-5 gap-y-3 ${
+      className={`flex flex-wrap items-center ${
         compact
-          ? "text-xs max-md:flex-nowrap max-md:gap-x-2.5 max-md:whitespace-nowrap"
-          : "rounded-2xl border border-white/80 bg-white/55 px-4 py-3 shadow-sm shadow-ink/5 backdrop-blur-sm sm:gap-x-6"
+          ? "gap-x-2 gap-y-3 text-xs max-md:flex-nowrap max-md:whitespace-nowrap"
+          : "gap-x-5 gap-y-3 rounded-2xl border border-white/80 bg-white/55 px-4 py-3 shadow-sm shadow-ink/5 backdrop-blur-sm sm:gap-x-6"
       }`}
     >
       <div className="flex items-center gap-2.5">
