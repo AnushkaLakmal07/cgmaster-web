@@ -46,6 +46,7 @@ export default function Header() {
                 height={48}
                 className="h-8 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105"
                 priority
+                unoptimized
               />
             </Link>
 
@@ -123,6 +124,7 @@ export default function Header() {
             width={120}
             height={32}
             className="h-8 w-auto object-contain"
+            unoptimized
           />
           {/* Close button — 44×44 touch target */}
           <button

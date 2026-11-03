@@ -116,18 +116,19 @@ export default function CourseCard({
       />
 
       {/* Image Banner — Perfect 4:3 Border-to-Border Full Frame Display */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden bg-paper2 lg:aspect-[16/10]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-paper2 xl:aspect-[16/10]">
         <Image
           src={course.thumbnail}
           alt={course.nameEnglish}
           fill
+          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover object-center transition-transform duration-500 md:group-hover:scale-105"
           priority={course.popular}
         />
       </div>
 
       {/* Card Content Body */}
-      <div className="relative flex flex-1 flex-col p-4 sm:p-8 lg:p-5">
+      <div className="relative flex flex-1 flex-col p-4 sm:p-6 lg:p-5">
         {/* Title */}
         <h3
           className={`font-display text-xl leading-tight font-bold text-ink transition-colors duration-200 sm:text-2xl max-md:min-h-[2.75rem] max-md:line-clamp-2 max-md:text-lg ${theme.titleHover}`}
@@ -149,7 +150,7 @@ export default function CourseCard({
         </div>
 
         {/* Bottom Action Footer */}
-        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-t border-mist/50 pt-5 lg:mt-4 lg:pt-4">
+        <div className="mt-6 flex flex-col gap-4 border-t border-mist/50 pt-5 sm:mt-4 sm:pt-4 lg:flex-row lg:items-center lg:justify-between">
           {course.detail ? (
             <div className="flex items-baseline gap-1 flex-wrap max-md:min-h-8 max-md:flex-nowrap">
               <p className={`font-display text-xl font-black sm:text-2xl ${theme.fee}`}>
@@ -168,7 +169,7 @@ export default function CourseCard({
           )}
 
           <span
-            className={`inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-bold shadow-sm transition-all duration-300 w-full sm:w-auto ${
+            className={`inline-flex w-full shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-bold shadow-sm transition-all duration-300 lg:w-auto ${
               course.comingSoon
                 ? `${theme.button} cursor-default`
                 : `${theme.button} md:group-hover:scale-105 active:scale-95`
